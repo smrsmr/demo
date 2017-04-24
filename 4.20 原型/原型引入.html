@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr = new Array(22,33,55,222);
+        //传统方法
+//        arr.sun = function () {
+//            var ret = 0;
+//            for ( var i = 0; i < this.length; i++ ) {
+//                ret += this[i];
+//            }
+//            return ret;
+//        }
+        // 使用原型
+        Array.prototype.sun = function () {
+            var ret = 0;
+            for ( var i = 0; i < this.length; i++ ) {
+                ret += this[i];
+            }
+            return ret;
+        }
+        var arr1 = new Array(212,313,515,222);
+        var arr2 = new Array(2712,3,51,222);
+        var arr3 = new Array(2121,3143,5175,2522);
+        alert(arr.sun());
+        alert(arr1.sun());
+        alert(arr2.sun());
+        alert(arr3.sun());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var person = {
+            name : 'red',
+            get age() {
+                if ( this._age > 22 ) {
+                    return "你真年轻你才"+this._age+"岁";
+                } else {
+                    return "我今年才"+this._age+"岁";
+                }
+          },
+            set age(val) {
+                this._age = val;
+            }
+        }
+        person.age = 101;
+        alert(person.age);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

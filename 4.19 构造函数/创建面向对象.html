@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = {
+            name : 'zs',
+            age : 15,
+            sex : '男'
+        }
+        var obj1 = new Object();
+        obj1.name = 'ls';
+        obj1.age = 22;
+        obj1.sex = '女';
+        console.log('我叫'+obj.name+','+'我今年'+obj.age+'岁'+','+'我的性别是'+obj.sex);
+        console.log('我叫'+obj1.name+','+'我今年'+obj1.age+'岁'+','+'我的性别是'+obj1.sex);
+
+        var zhangsan = {
+            name : 'zhangsan',
+            age : 33,
+            sex : '男',
+            hellow : function () {
+                alert('我叫'+this.name);
+                alert('今年'+this.age+'岁');
+                alert('我的个'+this.sex+'生');
+            },
+            zhangda : function () {
+                this.age++;
+            }
+        }
+        zhangsan.hellow();
+//        zhangsan.zhangda();
+//        zhangsan.zhangda();
+//        zhangsan.zhangda();
+        zhangsan.hellow(zhangsan.name = 'lisi',zhangsan.age = 18,zhangsan.sex = '女');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .ballon{
+          width: 81px;
+          height: 119px;
+          background: url(image/ballon.png) no-repeat;
+          position: absolute;
+          top: 600px;
+          left: 100px;
+            cursor: pointer;
+        }
+        #score {
+            width: 300px;
+            height: 20px;
+            line-height: 20px;
+            padding: 10px;
+            position: absolute;
+            font-size: 18px;
+        }
+        #pp {
+            font-size: 26px;
+            color: red;
+            font-weight: 600;
+            padding: 0 10px;
+        }
+    </style>
+  </head>
+  <body>
+      <div id="score">你当前的分数是：<span id="pp"></span> 分</div>
+      <script>
+          function  Ballon(){
+              this.top = 600;
+              this.left = Math.random() * 1200;
+              this.score = parseInt(Math.random() * 7) + 1;
+              this.init();
+              this.fly();
+          }
+
+          Ballon.prototype.init = function(){
+              this.dom = document.createElement("div");
+              this.dom.className = "ballon";
+              document.body.appendChild(this.dom);
+              this.dom.style.left = this.left + "px";
+              this.x = -(this.score-1) % 4 * 96;
+              this.y = -parseInt(this.score / 4) * 120;
+              this.dom.style.backgroundPosition = this.x + "px " + this.y + "px";
+          }
+
+          Ballon.prototype.fly = function(){
+              var self = this;
+              this.timer = setInterval(function(){
+                  self.top--;
+                  self.dom.style.top = self.top + "px";
+              },10)
+          }
+          var n = 0;
+          var time = 600;
+          var timer = setInterval(function () {
+              var b = new Ballon();
+              var pp = document.getElementById('pp');
+              b.dom.onclick = function () {
+                  //判断加分
+                  if ( b.x == -96 && b.y == 0 ) {                      //+2分
+                      n += 1;
+                  } else if (b.x == -192 && b.y == 0 ) {
+                      n += 2;
+                  } else if (b.x == -288 && b.y == 0 ) {
+                      n += 3;
+                  } else if (b.x == 0 && b.y == -120 ) {
+                      n += 4;
+                  } else if (b.x == -96 && b.y == -120 ) {
+                      n += 5;
+                  } else if (b.x == -192 && b.y == -120 ) {
+                      n += 6;
+                  } else if (b.x == -288 && b.y == -120 ) {
+                      n += 7;
+                  }
+                  n++;
+                  document.body.removeChild(b.dom);
+                  pp.innerHTML = n;
+              }
+          },time)
+      </script>
+  </body>
+</html>

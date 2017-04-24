@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>碰壁反弹</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #pp {
+            width: 800px;
+            height: 400px;
+            border: 1px solid red;
+            margin: 200px auto;
+            position: relative;
+        }
+        div {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: deepskyblue;
+            position: absolute;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+<p id="pp"></p>
+</body>
+<script>
+    var pp = document.getElementById('pp');
+    function Ball() {
+        var div = document.createElement('div');
+        pp.appendChild(div);
+        var speedX = Math.floor(Math.random()*16)+8;  //给小球一个初始速度
+        var speedY = Math.floor(Math.random()*12)+8;  //给小球一个初始速度
+        setInterval(function () {
+            var l = div.offsetLeft + speedX;  //创建l变量保存左边距离
+            var t = div.offsetTop + speedY;   //创建t变量保存上边距离
+            //判断左右边界
+            if ( l >= pp.clientWidth - div.offsetWidth) {
+                speedX *= -1;
+                l = pp.clientWidth - div.offsetWidth;
+            } else if ( l <= 0) {
+                speedY *= 1;
+                speedX *= -1;
+            }
+            //判断上下边界
+            if ( t >= pp.clientHeight - div.offsetHeight ) {
+                speedY *= -1;
+                speedX *= 1;
+                t = pp.clientHeight - div.offsetHeight;
+            } else if ( t <= 0 ) {
+                speedY *= -1;
+                speedX *= 1;
+            }
+            div.style.left = l + 'px';
+            div.style.top = t + 'px';
+        },20)
+    }
+    Ball();
+    Ball();
+    Ball();
+    Ball();
+    Ball();
+</script>
+</html>

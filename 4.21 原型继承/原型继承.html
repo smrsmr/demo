@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+         function father() {
+             this.sex = '男';
+             this.age = 40;
+             this.dog = '我养了一条狗';
+         }
+        father.prototype.xingzou = '我天生就会行走';
+
+        function Son(cat,name,sex) {
+            this.cat = cat;
+            this.name = name;
+        }
+        Son.prototype = new father;
+
+        xiaoming = new Son('我有一只猫','哈哈哈哈');
+        //xiaoming 是 Son的实例化对象 先从son里面找 找不到 在去son原型找
+        console.log(xiaoming.name);
+        console.log(xiaoming.cat);
+        console.log(xiaoming.sex);
+        console.log(xiaoming.xingzou);
+        console.log(xiaoming.dog);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

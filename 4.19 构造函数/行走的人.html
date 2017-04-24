@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 70px;
+            height: 120px;
+            background: url("img/run.png") no-repeat 0 -270px;
+            position: absolute;
+            left: 0px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+<script>
+    var oDiv = document.getElementsByTagName('div')[0];
+    var newLeft = 0;
+    var foot = 0;
+    var newRight = document.documentElement.clientWidth - oDiv.offsetWidth;
+    var timer = setInterval(function () {
+        foot++;
+        if ( foot > 7 ) {
+            foot = 0;
+        }
+        newLeft += 10;
+        if ( newLeft >= newRight ) {
+            if ( newRight <= 0 ) {
+                newLeft = 0;
+                newLeft += 10;
+                oDiv.style.left = newLeft + 'px';
+                oDiv.style.backgroundPositionX = -foot*63 + 'px';
+                oDiv.style.backgroundPositionY =  '-270px';
+            } else {
+                newRight -= 10;
+                oDiv.style.backgroundPositionY =  '-140px';
+                oDiv.style.backgroundPositionX = foot*64 - 450 + 'px';
+                oDiv.style.left = newRight + 'px';
+            }
+        } else {
+//            newLeft = 0;
+            oDiv.style.left = newLeft + 'px';
+            oDiv.style.backgroundPositionX = -foot*63 + 'px';
+        }
+    },100)
+</script>
+</html>

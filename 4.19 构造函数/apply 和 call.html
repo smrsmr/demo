@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var obj = {
+            name : 'zs',
+            age : 18,
+            sex : '男'
+        }
+        function fn(a,b,c) {
+            alert(this.name)
+            console.log(a+b+c);
+        }
+//        fn.apply(obj);   //通过内置对象apply 使fn 可以使用 obj 内的属性
+        fn.apply(obj,[2,3,4]);   //采用数组写法
+//        fn.call(obj);    //通过内置对象call 使fn 可以使用 obj 内的属性
+        fn.call(obj,2,3,4);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
