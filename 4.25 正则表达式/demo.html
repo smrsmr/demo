@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" value="" placeholder="请输入你的邮箱" id="inp1">
+<button id="btn1">提交</button>
+<input type="text" value="" placeholder="请输入你的电话" id="inp2">
+<button id="btn2">提交</button>
+</body>
+<script>
+    var oBtn1 = document.getElementById('btn1');
+    var oBtn2 = document.getElementById('btn2');
+    oBtn1.onclick = function () {
+        var oIpu1 = document.getElementById('inp1').value;
+        if ( oIpu1 == "") {
+            alert("请输入邮箱");
+        }
+        else if ( (oIpu1.search('@')) != -1 ) {
+            alert("登录成功");
+        } else {
+            alert("请输入正确的格式");
+        }
+    }
+    oBtn2.onclick = function () {
+        var oIpu2 = document.getElementById('inp2').value;
+        if(!(/^1[34578]\d{9}$/.test(oIpu2))){
+            alert("手机号错误");
+        } else {
+            alert("登录成功");
+        }
+    }
+</script>
+</html>
