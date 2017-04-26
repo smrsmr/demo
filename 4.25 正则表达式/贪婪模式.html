@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //贪婪模式 就是区间最大值
+        var reg = /\d{2,5}/;
+        var reg1 = /\d{5}/;
+        console.log(reg.exec(123456789)[0]);
+        console.log(reg1.exec(123456789)[0]);
+        //非贪婪模式 就是区间最小值
+        var reg = /\d{2,5}?/
+        var reg1 = /\d{2}/;
+        console.log(reg.exec(123456789)[0]);
+        console.log(reg1.exec(123456789)[0]);
+
+        // ? 表示 0 或 1
+    </script>
+</head>
+<body>
+
+</body>
+</html>

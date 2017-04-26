@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var reg = "2017as1hjh22dfg55hjk66";
+        console.log(reg.match(/\d+/g).join(''))
+
+        function fundNum(reg) {
+            var temp = '';
+            for ( var i = 0; i < reg.length; i++ ) {
+                if ( reg.charAt(i) < 9 && reg.charAt(i) >= 0 ) {
+                    temp += reg.charAt(i);
+                }
+            }
+            return temp;
+        }
+        console.log(fundNum(reg));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -18,7 +18,7 @@
         if ( oIpu1 == "") {
             alert("请输入邮箱");
         }
-        else if ( (oIpu1.search('@')) != -1 ) {
+        else if ( (/^\w{8,16}@\w{2,5}(.com|.cn)$/.test(oIpu1)) ) {
             alert("登录成功");
         } else {
             alert("请输入正确的格式");

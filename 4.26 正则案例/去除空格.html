@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var reg = " m a r k e ";
+        function remove(n) {
+            console.log(n.replace(/\s+/g,""));
+        }
+        remove(reg);
+
+        //原型
+        String.prototype.trim = function () {
+            return this.replace(/\s+/g,"");
+//            alert(1111111111111)
+        }
+        console.log(reg.trim());
+    </script>
+</head>
+<body>
+
+</body>
+</html>
