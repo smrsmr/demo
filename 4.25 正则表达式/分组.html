@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var reg = /abc(sd)\1/;
+        console.log(reg.test('abcsdsd'))   //true
+
+       // 表示仅分组 不引用
+        var reg = /(?:abc)(sd)\1/;
+        console.log(reg.test('abcsdsd'))   //true
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .div {
+            width: 50px;
+            height: 50px;
+            background: deepskyblue;
+            border: 4px solid #CCCCCC;
+            float: left;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="div">-</div>
+<div class="div">0</div>
+<div class="div">+</div>
+</body>
+<script>
+    var oDiv1 = document.getElementsByClassName('div')[0];
+    var oDiv2 = document.getElementsByClassName('div')[1];
+    var oDiv3 = document.getElementsByClassName('div')[2];
+    var n = 0;
+    oDiv1.onclick = function () {
+        if ( n == 0) {
+            n += 1;
+        }
+        n--;
+        oDiv2.innerHTML = n;
+    }
+    oDiv3.onclick = function () {
+        if ( n == 5 ) {
+            n -= 1;
+        }
+        n++;
+        oDiv2.innerHTML = n;
+    }
+</script>
+</html>
