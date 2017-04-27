@@ -17,7 +17,7 @@
         }
         Son.prototype = new father;
 
-        xiaoming = new Son('我有一只猫','哈哈哈哈');
+        var xiaoming = new Son('我有一只猫','哈哈哈哈');
         //xiaoming 是 Son的实例化对象 先从son里面找 找不到 在去son原型找
         console.log(xiaoming.name);
         console.log(xiaoming.cat);

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+           var father = function () {}
+           father.prototype.extend = function (o) {
+               for ( var k in o ) {
+                   this[k] = o[k];
+               }
+           }
+           father.prototype.extend({
+               run: function () {
+                   console.log("你好！！！！！！！！！！！");
+               },
+               cat: function () {
+                   console.log("我会吃饭")
+               }
+           })
+           var p = new father();
+           var p1 = new father();
+        p.run();
+        p1.run();
+        p.cat();
+        p1.cat();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
