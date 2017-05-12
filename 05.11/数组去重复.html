@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr = [2,5,6,9,8,7,22,5,6,3,55,11,2,8,66,22,1,44,8,100,7];
+    function remove1(arr) {
+        var temp = null;
+        var ret = [],isRepeated;
+        for ( var i = 0; i < arr.length; i++ ) {
+            isRepeated = false;
+            for ( var j = 0; j < ret.length; j++ ) {
+                if ( arr[i] == ret[j] ) {
+                    isRepeated = true;
+                    break;
+                }
+            }
+            if ( !isRepeated ) {
+                ret.push(arr[i]);
+            }
+        }
+        console.log(ret);
+
+//        for ( var p = 0; p < ret.length-1; p++ ) {
+//            for ( var k = 0; k < ret.length-1; k++ ) {
+//                if ( ret[k] > ret[k+1] ) {
+//                    temp = ret[k];
+//                    ret[k] = ret[k+1];
+//                    ret[k+1] = temp;
+//                }
+//            }
+//        }
+//        console.log(ret);
+    }
+
+    function remove2(arr) {
+        var ret = [];
+        var temp = null;
+        for ( var i = 0; i < arr.length; i++ ) {
+            if ( ret.indexOf(arr[i]) == -1 ) {
+                ret.push(arr[i]);
+            }
+        }
+        console.log(ret);
+
+        for ( var p = 0; p < ret.length-1; p++ ) {
+            for ( var k = 0; k < ret.length-1; k++ ) {
+                if ( ret[k] > ret[k+1] ) {
+                    temp = ret[k];
+                    ret[k] = ret[k+1];
+                    ret[k+1] = temp;
+                }
+            }
+        }
+        console.log(ret);
+    }
+//    remove1(arr);
+    remove2(arr);
+</script>
+</html>

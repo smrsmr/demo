@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var str = "hello world!";
+    // hell
+    var partt = /^\w{4}/;
+    console.log(str.match(partt));
+    // hel
+    var partt1 = /h.l/g;
+    console.log(str.match(partt1));
+    // hel
+    var partt2 = /[^d!]/g;
+    console.log((str.match(partt2)).join(""));
+</script>
+</html>

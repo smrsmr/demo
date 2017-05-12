@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            function Person() {
+                // _this 指代的是一个空对象
+                var _this = {};
+                _this.age = 22;
+                _this.name = 'hello';
+                _this.say = function () {
+                    alert(1234567898);
+                }
+                return _this;
+            }
+            function Tcache() {
+                var _this = Person();
+                _this.age = 23;
+                // 重写 say 方法
+                _this.say = function () {
+                    alert('asdfghjk');
+                }
+                return _this;
+            }
+            var b = new Tcache();
+            alert(b.age);
+            b.say();
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

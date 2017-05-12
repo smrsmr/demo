@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">Click</button>
+</body>
+<script>
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick = function () {
+        var arry = [];
+        while ( arry.length < 12 ) {
+            var random = Math.floor(Math.random()*12)+1;
+            if ( arry.indexOf(random) == -1 ) {
+                arry.push(random);
+            }
+        }
+        console.log(arry);
+        var result = [];
+        for( var i = 0;i < arry.length;i += 3 ){
+            //slice(start,end) 方法可从已有的数组中返回选定的元素。
+            /**
+             * start 必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。
+             * end  可选。规定从何处结束选取。
+             */
+            result.push(arry.slice(i,i+3));
+        }
+        console.log(result);
+    }
+</script>
+</html>
