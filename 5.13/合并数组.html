@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            function addArra() {
+                // 合并数组
+                var arr = [1,2,3,4,5,6];
+                var ret = [5,8,9,66,3,2,55];
+                var newArr = [];
+                for ( var i = 0; i < arr.length; i++ ) {
+                    ret.push(arr[i]);
+                }
+
+                // 去除数组重复字符串
+                for ( var j = 0; j < ret.length; j++ ) {
+                    if ( newArr.indexOf(ret[j]) == -1 ) {
+                        newArr.push(ret[j]);
+                    }
+                }
+                return newArr;
+            }
+            console.log(addArra());
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

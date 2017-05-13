@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            /*
+            *  substring 和 sunstr 的区别
+            *  substring() 方法返回的子串包括 start 处的字符，但不包括 stop 处的字符。
+            *  substr() 方法返回的子串包括 start 处的字符 和 stop 处的字符。
+            */
+            var str = "20170511";
+            alert(str.substring(0,4));
+            alert(str.substring(4,6));
+            alert(str.substring(6,8));
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
